@@ -50,9 +50,9 @@
 \SetSymbolFont{largesymbols}{bold}  {OMX}{cmex}{m}{n}
 \newcommand{\Losc}{\ensuremath{L^{\text{osc}}}}
 \newcommand{\Lcoh}{\ensuremath{L^{\text{coh}}}}
-\newcommand{\Lc}{\ensuremath{L^{\text{coh}}}}
+\newcommand{\Ld}{\ensuremath{L^{\text{d}}}}
 \newcommand{\Dm}{\ensuremath{\Delta m^2}}
-\newcommand{\Important}{\textcolor{Bittersweet}}
+\newcommand{\Important}{\textcolor{BrickRed}}
 \newcommand{\Regular}{\textcolor{AccentBlue}}
 \newcommand{\regitem}{\item[\Regular{$\bullet$}]}
 \newcommand{\impitem}{\item[\Important{$\bullet$}]}
@@ -109,16 +109,53 @@ Daya Bay}
       \item The issues above can be addressed when one consider neutrino
           flavor state as coherent superposition of mass states with different
           momenta:
+          \begin{equation*}
+           |\nu_i(k)\rangle \rightarrow  \int \frac{dk}{2\pi} f(k, p,
+           \sigma^2) | \nu_i(k) \rangle, \quad f(k, p, \sigma^2) = \left(
+           \frac{2\pi}{\sigma^2}\right)^{\frac{1}{4}}
+           \exp\left(-\dfrac{(p-k)^2}{4\sigma^2}\right)
+          \end{equation*}
+    \item Assuming Gaussian formfactor the oscillation probability reads: 
         \begin{equation*}
-\quad\, P_{\alpha\beta}(L)  =\sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k \beta }V^*_{\alpha k}V^{\phantom\dagger}_{j \alpha }  V^*_{\beta j} }{\sqrt[4]{1 +
+P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k \beta }V^*_{\alpha k}V^{\phantom\dagger}_{j \alpha }  V^*_{\beta j} }{\sqrt[4]{1 +
     \left(L/L^{\text{d}}_{kj}\right)^2}}\,\,
     \exp{\left[- \frac{\left(L/L^\text{coh}_{kj}\right)^2}{1+\left(L/L^{\text{d}}_{kj}\right)^2} -\mathrm{D}^2_{kj}\right]}
-    \text{e}^{-i(\varphi_{kj} + \varphi^d_{kj})},
-\label{eq:ossc}
-\end{equation*}
+    \text{e}^{-i(\varphi_{kj} + \varphi^d_{kj})}
+    \end{equation*} 
+    \begin{equation*}
+    \varphi^\text{d}_{kj} =
+    - \frac {L/L^\text{d}_{kj}}{1+\left(L/{L^\text{d}_{kj}}\right)^2}
+      \left(\frac L {L^\text{coh}_{kj}}\right)^2
+    + \frac{1}{2} \arctan { \frac{L}{L^\text{d}_{kj}}}
+    ,\quad \varphi_{kl}=\frac{L}{L^\text{osc}_{kj}}, \quad
+    \text{D}^2_{kj} =\frac{1}{2} \left( \frac{\Delta m^2_{kj}}{4 p^2\sigma_\text{rel}} \right)^2 
+    \end{equation*}
+    \begin{itemize}
+        \item \Important{$\sigma_{rel}=\sigma_{p}/p$} is a relative
+            momentum dispersion of wave packet. \newline
+            \Important{\ensuremath{\sigma_p}} is intrinsic
+    momentum dispersion of wave packet. It depends on a kinematics of
+    production and detection proccess and can be calculated. Here we assume
+    \ensuremath{\sigma_p = \text{const}}.
+\item \Important{$\Lcoh = \frac{L^\text{osc}_{kj}}{\sqrt 2 
+    \pi\sigma_\text{rel}}$} is a \Important{coherence lenght}.
+            At that distance separation of wave packets due to different group
+            velocities suppresses interference between mass states.
+        \item \Important{$\Ld_{kj}  =
+            \frac{L^\text{coh}_{kj}}{2\sqrt{2}\sigma_{\text{rel}}}$} is a
+            \Important{dispersion lenght} of wave packet. At that distance
+             coherence between mass states is partially restored due increase of
+             wave packet spacial size. 
+         \item \Important{\ensuremath{\text{D}^2_{kj}}} suppresses coherence
+             of mass states due to spacial localization of production and
+             detection regions.
+    \end{itemize}
   \end{itemize}
 \end{block}
 
+
+\begin{block}{What do we know about \ensuremath{\sigma_p\,}?}
+\end{block}
 
 \end{column}
 

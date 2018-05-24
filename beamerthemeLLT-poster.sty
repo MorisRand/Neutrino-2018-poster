@@ -26,20 +26,20 @@
 \addtobeamertemplate{headline}{} 
 {\begin{tikzpicture}[remember picture, overlay]
         \node [anchor=north west]  at (current page.north west)
-     {\hspace*{5cm}\includegraphics[height=10cm]{./pics/JINR_logo.png}};
+     {\hspace*{5cm}\includegraphics[height=11cm]{./pics/JINR_logo.png}};
   \end{tikzpicture}}
 
 \setbeamerfont{structure}{series=\bf,family=\sffamily,size=\Large}
 
-% \setbeamertemplate{itemize/enumerate body begin}{\vspace*{-1ex}}
+% \setbeamertemplate{itemize/enumerate body begin}{\hspace*{}}
 % \setbeamertemplate{itemize/enumerate body end}{\vspace*{-0.5ex}}
 
 % \setbeamertemplate{itemize item}{$\blacktriangleright\,$}
 \setbeamertemplate{itemize item}{$\bullet \,$}
 \setbeamertemplate{itemize subitem}{$\bullet\,$}
+\setlength\leftmarginii{3.9em}
         
 % \setbeamertemplate{itemize subitem}
-% \setlength\leftmargini{3.5em}
 
 \setbeamertemplate{block begin}{
   \vskip.75ex
@@ -52,7 +52,8 @@
     \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
   }
 \setbeamertemplate{block end}{
-  \end{beamercolorbox}\vskip1ex
+  \end{beamercolorbox}
+  \vskip1ex
 }
 
 % \setbeamertemplate{itemize/enumerate body begin}{\large}
