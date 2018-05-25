@@ -12,9 +12,16 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{lmodern}
-
+\usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usetikzlibrary{arrows,shapes}
+
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
 
 % Neccessary since lmodern fonts declare only small math symbols
 \DeclareFontShape{OMX}{cmex}{m}{n}{
@@ -32,17 +39,20 @@
 \newcommand{\Dm}{\ensuremath{\Delta m^2}}
 \newcommand{\Important}{\textcolor{BrickRed}}
 \newcommand{\Regular}{\textcolor{DeepBlue}}
+\newcommand{\MidnightBlue}{\textcolor{MidnightBlue}}
+\newcommand{\Orange}{\textcolor{Orange}}
+\newcommand{\Maroon}{\textcolor{Maroon}}
+\newcommand{\Bittersweet}{\textcolor{Bittersweet}}
 \newcommand{\regitem}{\item[\Regular{$\bullet$}]}
 \newcommand{\impitem}{\item[\Important{$\bullet$}]}
+\newcommand{\midblitem}{\item[\MidnightBlue{$\bullet$}]}
+\newcommand{\orangeitem}{\item[\Orange{$\bullet$}]}
+\newcommand{\pineitem}{\item[\Maroon{$\bullet$}]}
+\newcommand{\bitteritem}{\item[\Bittersweet{$\bullet$}]}
 \newcommand{\sip}{\ensuremath{\sigma_p}}
 \newcommand{\srel}{\ensuremath{\sigma_{\text{rel}}}}
 \newcommand{\six}{\ensuremath{\sigma_x}}
 \newcommand{\anue}{\ensuremath{\bar{\nu}_e}}
-
-
-
-
-
 
 \author[]{\textbf{Konstantin Treskov} on behalf of the Daya Bay collaboration}
 \title{Experimental study of decoherence effects\\ in neutrino oscillations in
@@ -75,12 +85,12 @@ Daya Bay}
         P_{\alpha\beta}(L) = \sum_{i,k=1}^3 V^*_{\alpha i} V_{\beta i}
         V^*_{\beta k}
         V_{\alpha k} \exp \left( -i \frac{L}{\Losc_{ik}}\right), \quad
-        \Important{\ensuremath{\Losc_{ik} = \dfrac{4 \pi E}{\Dm_{ik}}}}
+        \ensuremath{\Losc_{ik} = \dfrac{4 \pi E}{\Dm_{ik}}}
     \end{equation*}
     \impitem There are internal inconsistencies within that approach:
         \begin{itemize}
-            \item How to define distance \ensuremath{L} with delocalized
-                states?
+            \item  Distance \ensuremath{L} can't be defined with delocalized
+                states.
             \item The coherence of production and detection should be proven.
             \item Equal energy assumption is not Lorentz-invariant.
         \end{itemize}
@@ -97,36 +107,43 @@ Daya Bay}
            \sigma^2) | \nu_i(k) \rangle
           \end{equation*}
       \item Assuming formfactor is Gaussian the oscillation probability reads: 
+          \colorbox{CornflowerBlue!15}{\raisebox{0}[1.1\height]{\makebox[27.3em]{
         \begin{equation*}
-        \hspace*{-2cm} P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k \beta }V^*_{\alpha k}V^{\phantom\dagger}_{j \alpha }  V^*_{\beta j} }{\sqrt[4]{1 +
-    \left(L/L^{\text{d}}_{kj}\right)^2}}\,\,
-    \exp{\left[- \frac{\left(L/\Lcoh_{kj}\right)^2}{1+\left(L/\Ld}_{kj}\right)^2} -\mathrm{D}^2_{kj}\right]}
+         \hspace*{-1cm}P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k
+                 \beta }V^*_{\alpha k}V^{\phantom\dagger}_{j \alpha }
+                 V^*_{\beta j} }{\Maroon{\sqrt[4]{1 +
+             \left(L/\Ld_{kj}\right)^2}}}\,\,
+             \exp{\left[-\frac{\textcolor{MidnightBlue}{\left(L/\Lcoh_{kj}\right)^2}}{\Maroon{1+\left(L/\Ld_{kj}\right)^2}}
+    -\textcolor{Orange}{\mathrm{D}^2_{kj}\right]}}
     \text{e}^{-i(\varphi_{kj} + \varphi^d_{kj})}
-    \end{equation*}}
+    \end{equation*}
+     }}}
     \begin{equation*}
         \hspace*{-1cm} \varphi^\text{d}_{kj} =
-    - \frac {L/L^\text{d}_{kj}}{1+\left(L/{L^\text{d}_{kj}}\right)^2}
-      \left(\frac L {\Lcoh_{kj}}\right)^2
-    + \frac{1}{2} \arctan { \frac{L}{\Ld_{kj}}}
+        - \Maroon{\frac
+        {L/L^\text{d}_{kj}}{1+\left(L/{L^\text{d}_{kj}}\right)^2}}
+        \MidnightBlue{
+        \left(\frac L {\Lcoh_{kj}}\right)^2}
+        + \Maroon{\frac{1}{2} \arctan { \frac{L}{\Ld_{kj}}}}
     ,\quad \varphi_{kl}=\frac{L}{L^\text{osc}_{kj}}, \quad
     \end{equation*}
     \begin{itemize}
-        \item \Important{$\sigma_{rel}=\sigma_{p}/p$} is a relative
+        \bitteritem \Bittersweet{$\sigma_{rel}=\sigma_{p}/p$} is a relative
             momentum dispersion of wave packet. \newline
             \Important{\ensuremath{\sigma_p}} is intrinsic
     momentum dispersion of wave packet. It depends on a kinematics of
-    production and detection proccesses.\\ In that poster 
+    production and detection proccesses.\\ In this work
     \ensuremath{\sigma_p = \text{const}} is assumed.
-\item \Important{$\Lcoh = \frac{L^\text{osc}_{kj}}{\sqrt 2 
-    \pi\sigma_\text{rel}}$} is a \Important{coherence lenght}.
-            At that distance separation of wave packets due to different group
+    \midblitem \MidnightBlue{$\Lcoh = \frac{\Losc_{kj}}{\sqrt 2 
+    \pi\sigma_\text{rel}}$} is a \MidnightBlue{coherence lenght}.
+            At this distance separation of wave packets due to different group
             velocities suppresses interference between mass states.
-        \item \Important{$\Ld_{kj}  =
+        \pineitem \Maroon{$\Ld_{kj}  =
             \frac{\Lcoh_{kj}}{2\sqrt{2}\sigma_{\text{rel}}}$} is a
-            \Important{dispersion lenght} of wave packet. At that distance
+            \Maroon{dispersion lenght} of wave packet. At this distance
              coherence between mass states is partially restored due to
-             spacial spread of wave packet.
-         \item \Important{\ensuremath{ \text{D}^2_{kj} =\frac{1}{2} \left(
+             spacial broadening of wave packet.
+         \orangeitem \Orange{\ensuremath{ \text{D}^2_{kj} =\frac{1}{2} \left(
              \frac{\Dm_{kj}}{4 p^2\sigma_\text{rel}} \right)^2}} 
          suppresses the coherence of mass states due to spacial localization of production and
              detection regions.
@@ -137,10 +154,11 @@ Daya Bay}
 
 \begin{block}{What do we know about \sip?}
     \begin{itemize}
-        \item Phenomenological estimates, no fisrt principle QFT calculation:
+        \item No fisrt principle QFT calculations
+        \item Only phenomenological estimates such as:
         \begin{itemize}
             \item $\sip \sim 1\, \text{MeV}, \,\, \six \sim 10^{-11}\, \text{cm}$
-                -- uranium atom size;
+                --- uranium atom size;
             \item $\sip \sim 1-10 \, \text{keV}, \,\, \siz ~ 10^{-8} -
                 10^{-7} \, \text{cm}$ --- atomic scale;
             \item $\sip \sim 0.1 \, \text{eV}, \,\, \siz ~ 10^{-4} \, \text{cm}$
@@ -152,23 +170,27 @@ Daya Bay}
 
 \begin{block}{Reference}
     \begin{columns}[T]
-        \begin{column}{0.7\textwidth}
+        \begin{column}{0.8\textwidth}
             \begin{itemize}
                 \impitem \textbf{Study of the wave packet treatment of neutrino
-                oscillation at Daya Bay}, Eur.Phys.J. C77 (2017) no.9, 606
+                oscillation at Daya Bay},
+                \\ Eur.Phys.J. C77 (2017) no.9, 606
             \end{itemize}
         \end{column}
-        \begin{column}{0.3\textwidth}
-        \vspace*{-2.5cm}
-            \includegraphics[scale=0.7]{./pics/paper_qr_logo.png}
+        \begin{column}{0.2\textwidth}
+        \vspace*{-3cm}
+        \hspace*{\fill}
+        \href{https://link.springer.com/article/10.1140%2Fepjc%2Fs10052-017-4970-y}
+        { \includegraphics[scale=0.8]{./pics/paper_qr_nologo.png}}
         \end{column}
     \end{columns}
 \end{block}
-
+                
 \end{column}
 
 %%%% Second Column
 \begin{column}{.47\textwidth}
+    \linespread{1.01}
 \begin{block}{Daya Bay setup}
     \vskip-.7cm
     \begin{columns}[T]
@@ -176,9 +198,10 @@ Daya Bay}
             \begin{itemize}
                 \item \Important{8} detectors with 20 tons of
                     Gd-dopped liquid scintillator.
-                \item \Important{6} nuclear reactors with 2.9 GW of thermal power  
+                \item \Important{6} nuclear reactors with 2.9 GW of thermal
+                    power.
                 \item \anue\, detection through IBD 
-                    {\centering{\Important{$\anue + p \rightarrow e^+ + n$}}}
+                    \hspace*{3.5cm}{\centering{\Important{$\anue + p \rightarrow e^+ + n$}}}
                 \item Use coincidence of prompt and delayed signals in time to select
                     \anue\, events.
                 \item \anue\, sample based on \Important{621} days:
@@ -210,6 +233,7 @@ Daya Bay}
     \end{columns}
 \end{block}
 
+\vspace{.3cm}
 \begin{block}{Statistical method}
     \begin{columns}[T]
         \begin{column}{0.47\textwidth}
@@ -219,7 +243,7 @@ Daya Bay}
             \end{figure}
         \end{column}
         \hspace*{1.5cm}
-        \begin{column}{0.47\textwidth}
+        \begin{column}{0.5\textwidth}
               Test statistic is defined as:
                     \begin{equation*}
                         \chi^2 = (\mathbf{d} -
@@ -227,7 +251,7 @@ Daya Bay}
                             \mathbf{t} (\boldsymbol{\eta}))
                     \end{equation*} 
             \vspace*{-1.85cm}
-            {\hspace*{-1cm}
+            {\hskip-1cm{
             \begin{itemize}
                 \item Free parameters:
                     \begin{itemize}
@@ -243,18 +267,23 @@ Daya Bay}
                         \Important{Feldman-Cousins} methods.
             \end{itemize}
         }
+        }
         \end{column}
     \end{columns}
 \end{block}
 
+\vspace{.3cm}
 \begin{block}{Results and Discussion}
     \begin{columns}[T]
         \begin{column}{0.42\textwidth}
-            \begin{figure}
-                \includegraphics[scale=1.125]{./pics/scan_db_s-dm-th_ihep-fc_v2.pdf}
+            \begin{figure}[T]
+                \hspace*{-0.7cm}
+                % \vfill
+                \includegraphics[scale=1.15]{./pics/scan_db_s-dm-th_ihep-fc_v2.pdf}
             \end{figure}
         \end{column}
         \begin{column}{0.57\textwidth}
+            \vspace{1cm}
             \begin{itemize}
                 \impitem There are 3 distinct regions on \Important{\srel}:
                 \vspace*{-1.5cm}
@@ -269,32 +298,36 @@ Daya Bay}
                 \end{itemize}
                 \impitem Allowed region for \srel\, at 95\%~C.L.:
                 \begin{center}
-                    \colorbox{OliveGreen!20}{
+                    \colorbox{OliveGreen!20}{\raisebox{0}[1.2\height]{\makebox[13em][c]{
                     \begin{equation*}
                         2.38 \cdot 10^{-17} < \srel < 0.232
-                    \end{equation*}}
+                    \end{equation*}
+                    }}}
                 \end{center}
                 \impitem The lower limit is weeker than constrains from reactor cores and detector
-                dimensions. Taking that into account limits become:
+                dimensions. Combined limits are:
                 \begin{center}
-                    \colorbox{OliveGreen!20}{
+                    \colorbox{OliveGreen!20}{\raisebox{0}[1.2\height]{\makebox[13em][c]{
                     \begin{equation*}
                         10^{-11}\, \text{cm} \lesssim \six \lesssim 2\, \text{m}
-                    \end{equation*}}
+                    \end{equation*}
+                    }}}
                 \end{center}
                 \impitem The upper limit on \srel\, is
                 \begin{center}
-                    \colorbox{OliveGreen!20}{\srel < 0.2 at 95\% C.L.}
+                    \colorbox{OliveGreen!20}{\raisebox{0}[1.2\height]{\makebox[13em]{\srel <
+                        0.2 at 95\% C.L.}}}
                 \end{center}
             \end{itemize}
         \end{column}
     \end{columns}
 \end{block}
 
+\vspace{.3cm}
 \begin{block}{Conclusion}
     \begin{itemize}
         \impitem First experimental limits on \srel\, are obtained.
-        \impitem Insignificance of effect insure unbiased measurent of oscillation
+        \impitem Insignificance of decoherence effect ensures unbiased measurent of oscillation
         parameters within standard approach.
     \end{itemize}
 \end{block}
