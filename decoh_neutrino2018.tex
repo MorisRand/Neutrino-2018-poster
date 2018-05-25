@@ -2,42 +2,19 @@
 %% Possible paper sizes: a0, a0b, a1, a2, a3, a4.
 %% Possible orientations: portrait, landscape
 %% Font sizes can be changed using the scale option.
-\usepackage[size=a0,orientation=portrait,scale=1.6]{beamerposter}
+\usepackage[size=a0,orientation=portrait,scale=1.59]{beamerposter}
 \usepackage{xcolor}
 \usetheme{LLT-poster}
-% \usecolortheme{ComingClean}
 \usecolortheme{Moris}
-% \usecolortheme{ConspiciousCreep}  %% VERY garish.
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-% \usepackage{libertine}
-% \usepackage{tgbonum}
-% \usepackage{tgpagella}
+\usepackage{booktabs}
 \usepackage{lmodern}
-% \usepackage{times}
-% \usepackage{utopia}
-% \usepackage{palatino}
-% \usepackage[scaled=0.92]{inconsolata}
-% \usepackage[libertine]{newtxmath}
-% \renewcommand{\familydefault}{qbk}
-% \renewcommand{\familydefault}{qpl}
-% \renewcommand{\familydefault}{lmr}
-% \renewcommand{\familydefault}{ptm}
-% \renewcommand{\familydefault}{put}
-% \renewcommand{\familydefault}{ppl}
-% \renewcommand{\familydefault}{lmtt}
-% \renewcommand{\familydefault}{lmss}
-% \usepackage[scaled=0.8]{helvet}
-% \usepackage[helvet]{sfmath}
-% \everymath={\sf}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
-% \usepackage{mwe}
-% \usepackage{enumitem}
-% \setlist[itemize]{leftmargin=*}
 
 % Neccessary since lmodern fonts declare only small math symbols
 \DeclareFontShape{OMX}{cmex}{m}{n}{
@@ -48,14 +25,20 @@
 }{}
 \SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
 \SetSymbolFont{largesymbols}{bold}  {OMX}{cmex}{m}{n}
+
 \newcommand{\Losc}{\ensuremath{L^{\text{osc}}}}
 \newcommand{\Lcoh}{\ensuremath{L^{\text{coh}}}}
 \newcommand{\Ld}{\ensuremath{L^{\text{d}}}}
 \newcommand{\Dm}{\ensuremath{\Delta m^2}}
 \newcommand{\Important}{\textcolor{BrickRed}}
-\newcommand{\Regular}{\textcolor{AccentBlue}}
+\newcommand{\Regular}{\textcolor{DeepBlue}}
 \newcommand{\regitem}{\item[\Regular{$\bullet$}]}
 \newcommand{\impitem}{\item[\Important{$\bullet$}]}
+\newcommand{\sip}{\ensuremath{\sigma_p}}
+\newcommand{\srel}{\ensuremath{\sigma_{\text{rel}}}}
+\newcommand{\six}{\ensuremath{\sigma_x}}
+\newcommand{\anue}{\ensuremath{\bar{\nu}_e}}
+
 
 
 
@@ -71,8 +54,8 @@ Daya Bay}
 \begin{columns}[T]
 
 %%%% First Column
-\begin{column}{.5\textwidth}
-
+    \hspace*{-2.5cm}
+\begin{column}{.47\textwidth}
 \begin{block}{Conventional neutrino oscillations}
 \begin{itemize}
     \regitem Convetional approach to neutrino oscillations relies on a number of
@@ -84,7 +67,7 @@ Daya Bay}
                     | \nu_\alpha \rangle = \sum_{i=1}^{3} V^*_{\alpha i}\, |
                     \nu_i(p) \rangle
                 \end{equation*}
-            \item Production and detection occur coherently.
+            \item Production and detection proccesses occur coherently.
             \item Mass states travel at speed of light.
         \end{itemize}
     \item That leads to extensively experimentally studied oscillation probability
@@ -96,8 +79,8 @@ Daya Bay}
     \end{equation*}
     \impitem There are internal inconsistencies within that approach:
         \begin{itemize}
-            \item Identical energies are not possible due to decay kinematics.
-            \item The definite energy means spacial delocalization -- what is the L?
+            \item How to define distance \ensuremath{L} with delocalized
+                states?
             \item The coherence of production and detection should be proven.
             \item Equal energy assumption is not Lorentz-invariant.
         \end{itemize}
@@ -110,33 +93,30 @@ Daya Bay}
           flavor state as coherent superposition of mass states with different
           momenta:
           \begin{equation*}
-           |\nu_i(k)\rangle \rightarrow  \int \frac{dk}{2\pi} f(k, p,
-           \sigma^2) | \nu_i(k) \rangle, \quad f(k, p, \sigma^2) = \left(
-           \frac{2\pi}{\sigma^2}\right)^{\frac{1}{4}}
-           \exp\left(-\dfrac{(p-k)^2}{4\sigma^2}\right)
+              \hspace*{-2cm} |\nu_i(k)\rangle \rightarrow  \int \frac{dk}{2\pi} f(k, p,
+           \sigma^2) | \nu_i(k) \rangle
           \end{equation*}
-    \item Assuming Gaussian formfactor the oscillation probability reads: 
+      \item Assuming formfactor is Gaussian the oscillation probability reads: 
         \begin{equation*}
-P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k \beta }V^*_{\alpha k}V^{\phantom\dagger}_{j \alpha }  V^*_{\beta j} }{\sqrt[4]{1 +
+        \hspace*{-2cm} P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k \beta }V^*_{\alpha k}V^{\phantom\dagger}_{j \alpha }  V^*_{\beta j} }{\sqrt[4]{1 +
     \left(L/L^{\text{d}}_{kj}\right)^2}}\,\,
-    \exp{\left[- \frac{\left(L/L^\text{coh}_{kj}\right)^2}{1+\left(L/L^{\text{d}}_{kj}\right)^2} -\mathrm{D}^2_{kj}\right]}
+    \exp{\left[- \frac{\left(L/\Lcoh_{kj}\right)^2}{1+\left(L/\Ld}_{kj}\right)^2} -\mathrm{D}^2_{kj}\right]}
     \text{e}^{-i(\varphi_{kj} + \varphi^d_{kj})}
-    \end{equation*} 
+    \end{equation*}}
     \begin{equation*}
-    \varphi^\text{d}_{kj} =
+        \hspace*{-1cm} \varphi^\text{d}_{kj} =
     - \frac {L/L^\text{d}_{kj}}{1+\left(L/{L^\text{d}_{kj}}\right)^2}
-      \left(\frac L {L^\text{coh}_{kj}}\right)^2
-    + \frac{1}{2} \arctan { \frac{L}{L^\text{d}_{kj}}}
+      \left(\frac L {\Lcoh_{kj}}\right)^2
+    + \frac{1}{2} \arctan { \frac{L}{\Ld_{kj}}}
     ,\quad \varphi_{kl}=\frac{L}{L^\text{osc}_{kj}}, \quad
-    \text{D}^2_{kj} =\frac{1}{2} \left( \frac{\Delta m^2_{kj}}{4 p^2\sigma_\text{rel}} \right)^2 
     \end{equation*}
     \begin{itemize}
         \item \Important{$\sigma_{rel}=\sigma_{p}/p$} is a relative
             momentum dispersion of wave packet. \newline
             \Important{\ensuremath{\sigma_p}} is intrinsic
     momentum dispersion of wave packet. It depends on a kinematics of
-    production and detection proccess and can be calculated. Here we assume
-    \ensuremath{\sigma_p = \text{const}}.
+    production and detection proccesses.\\ In that poster 
+    \ensuremath{\sigma_p = \text{const}} is assumed.
 \item \Important{$\Lcoh = \frac{L^\text{osc}_{kj}}{\sqrt 2 
     \pi\sigma_\text{rel}}$} is a \Important{coherence lenght}.
             At that distance separation of wave packets due to different group
@@ -144,24 +124,183 @@ P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k \beta }V^*_{\
         \item \Important{$\Ld_{kj}  =
             \frac{L^\text{coh}_{kj}}{2\sqrt{2}\sigma_{\text{rel}}}$} is a
             \Important{dispersion lenght} of wave packet. At that distance
-             coherence between mass states is partially restored due increase of
-             wave packet spacial size. 
-         \item \Important{\ensuremath{\text{D}^2_{kj}}} suppresses coherence
-             of mass states due to spacial localization of production and
+             coherence between mass states is partially restored due to
+             spacial spread of wave packet.
+         \item \Important{\ensuremath{ \text{D}^2_{kj} =\frac{1}{2} \left(
+             \frac{\Dm_{kj}}{4 p^2\sigma_\text{rel}} \right)^2}} 
+         suppresses the coherence of mass states due to spacial localization of production and
              detection regions.
     \end{itemize}
   \end{itemize}
 \end{block}
 
 
-\begin{block}{What do we know about \ensuremath{\sigma_p\,}?}
+\begin{block}{What do we know about \sip?}
+    \begin{itemize}
+        \item Phenomenological estimates, no fisrt principle QFT calculation:
+        \begin{itemize}
+            \item $\sip \sim 1\, \text{MeV}, \,\, \six \sim 10^{-11}\, \text{cm}$
+                -- uranium atom size;
+            \item $\sip \sim 1-10 \, \text{keV}, \,\, \siz ~ 10^{-8} -
+                10^{-7} \, \text{cm}$ --- atomic scale;
+            \item $\sip \sim 0.1 \, \text{eV}, \,\, \siz ~ 10^{-4} \, \text{cm}$
+                --- pressure broadening.
+        \end{itemize}
+        \impitem Lack of experimental studies.
+    \end{itemize}
+\end{block}
+
+\begin{block}{Reference}
+    \begin{columns}[T]
+        \begin{column}{0.7\textwidth}
+            \begin{itemize}
+                \impitem \textbf{Study of the wave packet treatment of neutrino
+                oscillation at Daya Bay}, Eur.Phys.J. C77 (2017) no.9, 606
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+        \vspace*{-2.5cm}
+            \includegraphics[scale=0.7]{./pics/paper_qr_logo.png}
+        \end{column}
+    \end{columns}
 \end{block}
 
 \end{column}
 
 %%%% Second Column
-\begin{column}{.5\textwidth}
+\begin{column}{.47\textwidth}
+\begin{block}{Daya Bay setup}
+    \vskip-.7cm
+    \begin{columns}[T]
+        \begin{column}{0.58\textwidth}
+            \begin{itemize}
+                \item \Important{8} detectors with 20 tons of
+                    Gd-dopped liquid scintillator.
+                \item \Important{6} nuclear reactors with 2.9 GW of thermal power  
+                \item \anue\, detection through IBD 
+                    {\centering{\Important{$\anue + p \rightarrow e^+ + n$}}}
+                \item Use coincidence of prompt and delayed signals in time to select
+                    \anue\, events.
+                \item \anue\, sample based on \Important{621} days:
+                    \vskip1.5ex
+                    {\centering
+                    \begin{table*}
+                        \renewcommand{\arraystretch}{1.2}
+                        \begin{tabular}{@{}cccc{}@}
+                            \toprule
+                        & \Regular{EH1} & \Regular{EH2} & \Regular{EH3}\\
+                            \Regular{Events} & \Important{613813}\, &
+                            \Important{477144}\, & \Important{150255}
+                            \bottomrule
+                        \end{tabular}
+                    \end{table*}}
+                    \vskip1ex
+                \item Energy resolution \ensuremath{\sim 8\,\%} at 1~MeV.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+        \vspace*{-2.5cm}
+            \begin{figure}[T]
+                \includegraphics[scale=0.8]{./pics/DYBdiag_3.png}
+            \end{figure}
+            \begin{figure}[b]
+                \includegraphics[scale=2.8]{./pics/Fig2_DYB_farhalllabel.png}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{block}
+
+\begin{block}{Statistical method}
+    \begin{columns}[T]
+        \begin{column}{0.47\textwidth}
+            \vspace*{-1cm}
+            \begin{figure}
+                \includegraphics[scale=1.22]{./pics/EH-ratio_5sigma-s_double-EH_bold.pdf}
+            \end{figure}
+        \end{column}
+        \hspace*{1.5cm}
+        \begin{column}{0.47\textwidth}
+              Test statistic is defined as:
+                    \begin{equation*}
+                        \chi^2 = (\mathbf{d} -
+                            \mathbf{t} (\boldsymbol{\eta}))^T V^{-1}(\mathbf{d} -
+                            \mathbf{t} (\boldsymbol{\eta}))
+                    \end{equation*} 
+            \vspace*{-1.85cm}
+            {\hspace*{-1cm}
+            \begin{itemize}
+                \item Free parameters:
+                    \begin{itemize}
+                    \impitem \Important{\srel}
+                    \impitem \Important{\ensuremath{\sin^2 2\theta_{13}}}
+                    \impitem \Important{\ensuremath{\Dm_{32}}}
+                    \impitem Flux normalization \Important{N}
+                    \end{itemize}
+                \item Systematical uncertainties are propagated via covariance
+                    matrix \Important{V}
+                    \impitem Confidence levels are constucted via \Important{fixed-level
+                        \ensuremath{\Delta \chi^2}} and 
+                        \Important{Feldman-Cousins} methods.
+            \end{itemize}
+        }
+        \end{column}
+    \end{columns}
+\end{block}
+
+\begin{block}{Results and Discussion}
+    \begin{columns}[T]
+        \begin{column}{0.42\textwidth}
+            \begin{figure}
+                \includegraphics[scale=1.125]{./pics/scan_db_s-dm-th_ihep-fc_v2.pdf}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.57\textwidth}
+            \begin{itemize}
+                \impitem There are 3 distinct regions on \Important{\srel}:
+                \vspace*{-1.5cm}
+                \begin{itemize}
+                    \item \Important{$\srel < 10^{-16}$} -- oscillations are suppresses
+                    by \ensuremath{\text{D}^2}.
+                    \item \Important{$10^{-16} < \srel < 0.1$} -- no impact on
+                    oscillations.
+                    \item \Important{$\srel > 0.1$} -- loss of coherence
+                    due to spacial separation
+                    \Important{\Lcoh} and dispersion \Important{\Ld}.
+                \end{itemize}
+                \impitem Allowed region for \srel\, at 95\%~C.L.:
+                \begin{center}
+                    \colorbox{OliveGreen!20}{
+                    \begin{equation*}
+                        2.38 \cdot 10^{-17} < \srel < 0.232
+                    \end{equation*}}
+                \end{center}
+                \impitem The lower limit is weeker than constrains from reactor cores and detector
+                dimensions. Taking that into account limits become:
+                \begin{center}
+                    \colorbox{OliveGreen!20}{
+                    \begin{equation*}
+                        10^{-11}\, \text{cm} \lesssim \six \lesssim 2\, \text{m}
+                    \end{equation*}}
+                \end{center}
+                \impitem The upper limit on \srel\, is
+                \begin{center}
+                    \colorbox{OliveGreen!20}{\srel < 0.2 at 95\% C.L.}
+                \end{center}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{block}
+
+\begin{block}{Conclusion}
+    \begin{itemize}
+        \impitem First experimental limits on \srel\, are obtained.
+        \impitem Insignificance of effect insure unbiased measurent of oscillation
+        parameters within standard approach.
+    \end{itemize}
+\end{block}
+
 \end{column}
+
 \end{columns}
 
 \end{frame}
