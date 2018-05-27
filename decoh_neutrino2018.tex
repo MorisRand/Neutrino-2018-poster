@@ -31,7 +31,7 @@
   <9.5-> cmex10
 }{}
 \SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
-\SetSymbolFont{largesymbols}{bold}  {OMX}{cmex}{m}{n}
+\SetSymbolFont{largesymbols}{bold}{OMX}{cmex}{m}{n}
 
 \newcommand{\Losc}{\ensuremath{L^{\text{osc}}}}
 \newcommand{\Lcoh}{\ensuremath{L^{\text{coh}}}}
@@ -84,7 +84,7 @@ Daya Bay}
     \begin{equation*}
         P_{\alpha\beta}(L) = \sum_{i,k=1}^3 V^*_{\alpha i} V_{\beta i}
         V^*_{\beta k}
-        V_{\alpha k} \exp \left( -i \frac{L}{\Losc_{ik}}\right), \quad
+        V_{\alpha k} \exp \left( - 2\pi i  \frac{L}{\Losc_{ik}}\right), \quad
         \ensuremath{\Losc_{ik} = \dfrac{4 \pi E}{\Dm_{ik}}}
     \end{equation*}
     \impitem There are internal inconsistencies within that approach:
@@ -106,7 +106,7 @@ Daya Bay}
               \hspace*{-2cm} |\nu_i(k)\rangle \rightarrow  \int \frac{dk}{2\pi} f(k, p,
            \sigma^2) | \nu_i(k) \rangle
           \end{equation*}
-      \item Assuming formfactor is Gaussian the oscillation probability reads: 
+      \item Assuming form factor is Gaussian the oscillation probability reads: 
           \colorbox{CornflowerBlue!15}{\raisebox{0}[1.1\height]{\makebox[27.3em]{
         \begin{equation*}
          \hspace*{-1cm}P_{\alpha\beta}(L) = \sum_{k,\,j=1}^3\frac{ V^{\phantom\dagger}_{k
@@ -125,7 +125,7 @@ Daya Bay}
         \MidnightBlue{
         \left(\frac L {\Lcoh_{kj}}\right)^2}
         + \Maroon{\frac{1}{2} \arctan { \frac{L}{\Ld_{kj}}}}
-    ,\quad \varphi_{kl}=\frac{L}{L^\text{osc}_{kj}}, \quad
+    ,\quad \varphi_{kl}=2\pi\frac{L}{L^\text{osc}_{kj}}, \quad
     \end{equation*}
     \begin{itemize}
         \bitteritem \Bittersweet{$\sigma_{rel}=\sigma_{p}/p$} is a relative
@@ -135,12 +135,12 @@ Daya Bay}
     production and detection proccesses.\\ In this work
     \ensuremath{\sigma_p = \text{const}} is assumed.
     \midblitem \MidnightBlue{$\Lcoh = \frac{\Losc_{kj}}{\sqrt 2 
-    \pi\sigma_\text{rel}}$} is a \MidnightBlue{coherence lenght}.
+    \pi\sigma_\text{rel}}$} is a \MidnightBlue{coherence length}.
             At this distance separation of wave packets due to different group
             velocities suppresses interference between mass states.
         \pineitem \Maroon{$\Ld_{kj}  =
             \frac{\Lcoh_{kj}}{2\sqrt{2}\sigma_{\text{rel}}}$} is a
-            \Maroon{dispersion lenght} of wave packet. At this distance
+            \Maroon{dispersion length} of wave packet. At this distance
              coherence between mass states is partially restored due to
              spacial broadening of wave packet.
          \orangeitem \Orange{\ensuremath{ \text{D}^2_{kj} =\frac{1}{2} \left(
@@ -154,7 +154,7 @@ Daya Bay}
 
 \begin{block}{What do we know about \sip?}
     \begin{itemize}
-        \item No fisrt principle QFT calculations
+        \item No fisrt principle QFT calculations.
         \item Only phenomenological estimates such as:
         \begin{itemize}
             \item $\sip \sim 1\, \text{MeV}, \,\, \six \sim 10^{-11}\, \text{cm}$
@@ -212,7 +212,7 @@ Daya Bay}
                         \begin{tabular}{@{}cccc{}@}
                             \toprule
                         & \Regular{EH1} & \Regular{EH2} & \Regular{EH3}\\
-                            \Regular{Events} & \Important{613813}\, &
+                            \Regular{Events}\,\,\, & \Important{613813}\, &
                             \Important{477144}\, & \Important{150255}
                             \bottomrule
                         \end{tabular}
@@ -326,7 +326,7 @@ Daya Bay}
 \vspace{.3cm}
 \begin{block}{Conclusion}
     \begin{itemize}
-        \impitem First experimental limits on \srel\, are obtained.
+        \impitem First experimental limits on \Important{\srel{}} are obtained.
         \impitem Insignificance of decoherence effect ensures unbiased measurent of oscillation
         parameters within standard approach.
     \end{itemize}
