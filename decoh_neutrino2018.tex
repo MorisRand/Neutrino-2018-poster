@@ -53,6 +53,7 @@
 \newcommand{\srel}{\ensuremath{\sigma_{\text{rel}}}}
 \newcommand{\six}{\ensuremath{\sigma_x}}
 \newcommand{\anue}{\ensuremath{\bar{\nu}_e}}
+%blag
 
 \author[]{\textbf{Konstantin Treskov} on behalf of the Daya Bay collaboration}
 \title{Experimental study of decoherence effects\\ in neutrino oscillations in
@@ -80,14 +81,14 @@ Daya Bay}
             \item Production and detection proccesses occur coherently.
             \item Mass states travel at speed of light.
         \end{itemize}
-    \item That leads to extensively experimentally studied oscillation probability
+    \item This leads to the extensively experimentally studied oscillation probability
     \begin{equation*}
         P_{\alpha\beta}(L) = \sum_{i,k=1}^3 V^*_{\alpha i} V_{\beta i}
         V^*_{\beta k}
         V_{\alpha k} \exp \left( - 2\pi i  \frac{L}{\Losc_{ik}}\right), \quad
         \ensuremath{\Losc_{ik} = \dfrac{4 \pi E}{\Dm_{ik}}}
     \end{equation*}
-    \impitem There are internal inconsistencies within that approach:
+    \impitem There are internal inconsistencies within this approach:
         \begin{itemize}
             \item  Distance \ensuremath{L} can't be defined with delocalized
                 states.
@@ -99,7 +100,7 @@ Daya Bay}
 
 \begin{block}{Neutrino oscillation with wave packets}
   \begin{itemize}
-      \item The issues above can be addressed when one consider neutrino
+      \item The issues above can be addressed when one considers neutrino
           flavor state as coherent superposition of mass states with different
           momenta:
           \begin{equation*}
@@ -128,18 +129,17 @@ Daya Bay}
     ,\quad \varphi_{kl}=2\pi\frac{L}{L^\text{osc}_{kj}}, \quad
     \end{equation*}
     \begin{itemize}
-        \bitteritem \Bittersweet{$\sigma_{rel}=\sigma_{p}/p$} is a relative
-            momentum dispersion of wave packet. \newline
-            \Important{\ensuremath{\sigma_p}} is intrinsic
-    momentum dispersion of wave packet. It depends on a kinematics of
-    production and detection proccesses.\\ In this work
+        \bitteritem \Bittersweet{$\sigma_{rel}=\sigma_{p}/p$} is the relative
+            momentum dispersion of wave packet. \Important{\ensuremath{\sigma_p}} is the intrinsic
+    momentum dispersion of wave packet. It depends on the kinematics of
+    production and detection proccesses. In this work
     \ensuremath{\sigma_p = \text{const}} is assumed.
     \midblitem \MidnightBlue{$\Lcoh = \frac{\Losc_{kj}}{\sqrt 2 
-    \pi\sigma_\text{rel}}$} is a \MidnightBlue{coherence length}.
+    \pi\sigma_\text{rel}}$} is \MidnightBlue{coherence length}.
             At this distance separation of wave packets due to different group
             velocities suppresses interference between mass states.
         \pineitem \Maroon{$\Ld_{kj}  =
-            \frac{\Lcoh_{kj}}{2\sqrt{2}\sigma_{\text{rel}}}$} is a
+            \frac{\Lcoh_{kj}}{2\sqrt{2}\sigma_{\text{rel}}}$} is
             \Maroon{dispersion length} of wave packet. At this distance
              coherence between mass states is partially restored due to
              spacial broadening of wave packet.
@@ -154,14 +154,14 @@ Daya Bay}
 
 \begin{block}{What do we know about \sip?}
     \begin{itemize}
-        \item No fisrt principle QFT calculations.
+        \item No first principle QFT calculations.
         \item Only phenomenological estimates such as:
         \begin{itemize}
             \item $\sip \sim 1\, \text{MeV}, \,\, \six \sim 10^{-11}\, \text{cm}$
                 --- uranium atom size;
-            \item $\sip \sim 1-10 \, \text{keV}, \,\, \siz ~ 10^{-8} -
+            \item $\sip \sim 1-10 \, \text{keV}, \,\, \six \sim 10^{-8} -
                 10^{-7} \, \text{cm}$ --- atomic scale;
-            \item $\sip \sim 0.1 \, \text{eV}, \,\, \siz ~ 10^{-4} \, \text{cm}$
+            \item $\sip \sim 0.1 \, \text{eV}, \,\, \six \sim 10^{-4} \, \text{cm}$
                 --- pressure broadening.
         \end{itemize}
         \impitem Lack of experimental studies.
@@ -174,7 +174,7 @@ Daya Bay}
             \begin{itemize}
                 \impitem \textbf{Study of the wave packet treatment of neutrino
                 oscillation at Daya Bay},
-                \\ Eur.Phys.J. C77 (2017) no.9, 606
+                \\ Eur.Phys.J. C77 (2017), 606
             \end{itemize}
         \end{column}
         \begin{column}{0.2\textwidth}
@@ -196,9 +196,9 @@ Daya Bay}
     \begin{columns}[T]
         \begin{column}{0.58\textwidth}
             \begin{itemize}
-                \item \Important{8} detectors with 20 tons of
-                    Gd-dopped liquid scintillator.
-                \item \Important{6} nuclear reactors with 2.9 GW of thermal
+                \item \Important{8} detectors each with 20 tons of
+                    Gd-doped liquid scintillator.
+                \item \Important{6} nuclear reactors each with 2.9 GW of thermal
                     power.
                 \item \anue\, detection through IBD 
                     \hspace*{3.5cm}{\centering{\Important{$\anue + p \rightarrow e^+ + n$}}}
@@ -261,8 +261,8 @@ Daya Bay}
                     \impitem Flux normalization \Important{N}
                     \end{itemize}
                 \item Systematical uncertainties are propagated via covariance
-                    matrix \Important{V}
-                    \impitem Confidence levels are constucted via \Important{fixed-level
+                    matrix \Important{V}.
+                    \impitem Confidence levels are constructed via \Important{fixed-level
                         \ensuremath{\Delta \chi^2}} and 
                         \Important{Feldman-Cousins} methods.
             \end{itemize}
@@ -304,7 +304,7 @@ Daya Bay}
                     \end{equation*}
                     }}}
                 \end{center}
-                \impitem The lower limit is weeker than constrains from reactor cores and detector
+                \impitem The lower limit can be improved with constraints from reactor cores and detector
                 dimensions. Combined limits are:
                 \begin{center}
                     \colorbox{OliveGreen!20}{\raisebox{0}[1.2\height]{\makebox[13em][c]{
@@ -328,7 +328,7 @@ Daya Bay}
     \begin{itemize}
         \impitem First experimental limits on \Important{\srel{}} are obtained.
         \impitem Insignificance of decoherence effect ensures unbiased measurent of oscillation
-        parameters within standard approach.
+        parameters using the standard approach in Daya Bay.
     \end{itemize}
 \end{block}
 
@@ -337,4 +337,5 @@ Daya Bay}
 \end{columns}
 
 \end{frame}
+%%%%
 \end{document}
