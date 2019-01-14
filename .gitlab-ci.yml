@@ -1,0 +1,8 @@
+compile_pdf:
+  image: aergus/latex
+  script:
+    - latexmk
+  artifacts:
+    paths:
+      - decoh_neutrino2018.pdf
+
